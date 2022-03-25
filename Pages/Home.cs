@@ -9,36 +9,42 @@ namespace TestYou.Pages
 {
     public class Home
     {
-        public WebDriver driver;
-        public Home(WebDriver driver)
+        public WebDriver Driver;
+        public Home(WebDriver Driver)
         {
-            this.driver = driver;
+            this.Driver = Driver;
         }
 
-        private By lbl_panellogin = By.XPath("//div[contains(@id,'_pnl_login')]//span");
-        private By txt_username = By.XPath("(//input[contains(@id,'_txtUserLogin')])[2]");
-        private By txt_password = By.XPath("(//input[contains(@id,'_txtPassword')])[2]");
-        private By btn_login = By.XPath("//input[contains(@id,'_btnLogin')]");
+        private readonly By Lbl_ErrorLogin = By.XPath("//span[contains(@id,'_lblOutput')]");
+        private readonly By Lbl_PanelLogin = By.XPath("//div[contains(@id,'_pnl_login')]//span");
+        private readonly By Txt_Username = By.XPath("(//input[contains(@id,'_txtUserLogin')])[2]");
+        private readonly By Txt_Password = By.XPath("(//input[contains(@id,'_txtPassword')])[2]");
+        private readonly By Btn_Login = By.XPath("//input[contains(@id,'_btnLogin')]");
 
-        public String getPanelLoginName()
+        public String GetErrorLogin()
         {
-            return this.driver.FindElement(lbl_panellogin).Text;
+            return this.Driver.FindElement(Lbl_ErrorLogin).Text;
+        }
+        
+        public String GetPanelLoginName()
+        {
+            return this.Driver.FindElement(Lbl_PanelLogin).Text;
         }
 
-        public void enterUsernme(String username)
+        public void EnterUsernme(String username)
         {
-            this.driver.FindElement(this.txt_username).Clear();
-            this.driver.FindElement(this.txt_username).SendKeys(username);
+            this.Driver.FindElement(this.Txt_Username).Clear();
+            this.Driver.FindElement(this.Txt_Username).SendKeys(username);
         }
-        public void enterPassword(String password)
+        public void EnterPassword(String password)
         {
-            this.driver.FindElement(this.txt_password).Clear();
-            this.driver.FindElement(this.txt_password).SendKeys(password);
+            this.Driver.FindElement(this.Txt_Password).Clear();
+            this.Driver.FindElement(this.Txt_Password).SendKeys(password);
         }
 
-        public void clickLogin()
+        public void ClickLogin()
         {
-            this.driver.FindElement(this.btn_login).Click();
+            this.Driver.FindElement(this.Btn_Login).Click();
         }
     }
 }

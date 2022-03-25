@@ -9,24 +9,24 @@ namespace TestYou.Pages
 {
     public class Dashboard
     {
-        private WebDriver driver;
+        private WebDriver Driver;
 
-        public Dashboard(WebDriver driver)
+        public Dashboard(WebDriver Driver)
         {
-            this.driver = driver;
+            this.Driver = Driver;
         }
 
-        private By lbl_username = By.XPath("//span[contains(@id,'_username')]");
-        private By btn_signout = By.XPath("//a[contains(@id,'_lnkbtnSignout')]");
+        private readonly By Lbl_Username = By.XPath("//span[contains(@id,'_username')]");
+        private readonly By Btn_Signout = By.XPath("//a[contains(@id,'_lnkbtnSignout')]");
 
-        public string getUsername()
+        public string GetUsername()
         {
-            return this.driver.FindElement(this.lbl_username).Text;
+            return this.Driver.FindElement(this.Lbl_Username).Text;
         }
 
-        public void clickSignout()
+        public void ClickSignout()
         {
-            this.driver.FindElement(this.btn_signout).Click();
+            this.Driver.FindElement(this.Btn_Signout).Click();
         }
     }
 }
