@@ -7,7 +7,7 @@ trigger:
 - master
 
 schedules:
-- cron: "5 * * * *"
+- cron: "*/10 * * * *"
   displayName: Every 5 mins
   branches:
     include: 
