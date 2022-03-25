@@ -7,12 +7,12 @@ trigger:
 - master
 
 schedules:
-- cron: "*/10 * * * *"
-  displayName: Every 5 mins
+- cron: "*/15 * * * *"
+  displayName: Every 15 mins
   branches:
     include: 
     - master
-  always: false
+  always: true
 
 pool:
   vmImage: 'windows-latest'
