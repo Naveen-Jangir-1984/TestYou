@@ -6,6 +6,14 @@
 trigger:
 - master
 
+schedules:
+- cron: "5 * * * *"
+  displayName: Every 5 mins
+  branches:
+    include: 
+    - master
+  always: false
+
 pool:
   vmImage: 'windows-latest'
 
