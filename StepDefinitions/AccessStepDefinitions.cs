@@ -5,6 +5,7 @@ using TechTalk.SpecFlow;
 using TestYou.Pages;
 using WebDriverManager;
 using WebDriverManager.DriverConfigs.Impl;
+using WebDriverManager.Helpers;
 
 namespace TestYou.StepDefinitions
 {
@@ -20,7 +21,7 @@ namespace TestYou.StepDefinitions
         [Before]
         public void SetUp()
         {
-            new DriverManager().SetUpDriver(new ChromeConfig());
+            new DriverManager().SetUpDriver(new ChromeConfig(), VersionResolveStrategy.MatchingBrowser);
             this.Driver = new ChromeDriver();
             this.Home = new Home(this.Driver);
             this.Dashoard = new Dashboard(this.Driver);
