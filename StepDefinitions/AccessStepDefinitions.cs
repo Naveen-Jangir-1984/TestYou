@@ -28,22 +28,22 @@ namespace TestYou.StepDefinitions
         }
 
         [Given(@"user in on '([^']*)' home page")]
-        public void GivenUserInOnHomePage(string TestURL)
+        public void GivenUserInOnHomePage(string testURL)
         {
-            this.Driver.Url = TestURL;
+            this.Driver.Url = testURL;
         }
 
         [When(@"user enters (.*) in username text field")]
-        public void WhenUserEntersTestwithtestyouInUsernameTextField(String Username)
+        public void WhenUserEntersTestwithtestyouInUsernameTextField(String username)
         {
-            this.Home.EnterUsernme(Username);
-            this.Username = Username;
+            this.Home.EnterUsernme(username);
+            this.Username = username;
         }
 
         [When(@"user enters (.*) in password text field")]
-        public void WhenUserEntersInPasswordTextField(String Password)
+        public void WhenUserEntersInPasswordTextField(String password)
         {
-            this.Home.EnterPassword(Password);
+            this.Home.EnterPassword(password);
         }
 
         [When(@"user click on Login button")]

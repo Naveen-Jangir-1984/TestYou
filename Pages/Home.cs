@@ -4,15 +4,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestYou.Utilities;
 
 namespace TestYou.Pages
 {
     public class Home
     {
-        public WebDriver Driver;
-        public Home(WebDriver Driver)
+        public readonly WebDriver Driver;
+        public Home(WebDriver driver)
         {
-            this.Driver = Driver;
+            this.Driver = driver;
         }
 
         private readonly By Lbl_ErrorLogin = By.XPath("//span[contains(@id,'_lblOutput')]");
@@ -23,28 +24,26 @@ namespace TestYou.Pages
 
         public String GetErrorLogin()
         {
-            return this.Driver.FindElement(Lbl_ErrorLogin).Text;
+            return CommonFunctions.WaitAndGetText(this.Driver, this.Lbl_ErrorLogin);
         }
         
         public String GetPanelLoginName()
         {
-            return this.Driver.FindElement(Lbl_PanelLogin).Text;
+            return CommonFunctions.WaitAndGetText(this.Driver, this.Lbl_PanelLogin);
         }
 
         public void EnterUsernme(String username)
         {
-            this.Driver.FindElement(this.Txt_Username).Clear();
-            this.Driver.FindElement(this.Txt_Username).SendKeys(username);
+            CommonFunctions.WaitAndEnterValueInTextField(this.Driver, this.Txt_Username, username);
         }
         public void EnterPassword(String password)
         {
-            this.Driver.FindElement(this.Txt_Password).Clear();
-            this.Driver.FindElement(this.Txt_Password).SendKeys(password);
+            CommonFunctions.WaitAndEnterValueInTextField(this.Driver, this.Txt_Password, password);
         }
 
         public void ClickLogin()
         {
-            this.Driver.FindElement(this.Btn_Login).Click();
+            CommonFunctions.WaitAndClickOnButton(this.Driver, this.Btn_Login);
         }
     }
 }

@@ -4,16 +4,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestYou.Utilities;
 
 namespace TestYou.Pages
 {
     public class Dashboard
     {
-        private WebDriver Driver;
+        private readonly WebDriver Driver;
 
-        public Dashboard(WebDriver Driver)
+        public Dashboard(WebDriver driver)
         {
-            this.Driver = Driver;
+            this.Driver = driver;
         }
 
         private readonly By Lbl_Username = By.XPath("//span[contains(@id,'_username')]");
@@ -21,12 +22,12 @@ namespace TestYou.Pages
 
         public string GetUsername()
         {
-            return this.Driver.FindElement(this.Lbl_Username).Text;
+            return CommonFunctions.WaitAndGetText(this.Driver, this.Lbl_Username); ;
         }
 
         public void ClickSignout()
         {
-            this.Driver.FindElement(this.Btn_Signout).Click();
+            CommonFunctions.WaitAndClickOnButton(this.Driver, Btn_Signout);
         }
     }
 }
