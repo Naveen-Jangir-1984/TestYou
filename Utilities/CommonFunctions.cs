@@ -11,7 +11,7 @@ namespace TestYou.Utilities
     public class CommonFunctions
     {
         private static DefaultWait<IWebDriver> FluentWait;
-        private static readonly int Timeout = 60;
+        private static readonly int Timeout = 30;
 
         public static void WaitAndEnterValueInTextField(WebDriver driver, By element, String value)
         {
