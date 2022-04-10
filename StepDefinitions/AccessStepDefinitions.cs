@@ -27,7 +27,7 @@ namespace TestYou.StepDefinitions
             this.Dashoard = new Dashboard(this.Driver);
         }
 
-        [Given(@"user in on '([^']*)' home page")]
+        [Given(@"user is on '([^']*)' home page")]
         public void GivenUserInOnHomePage(string testURL)
         {
             this.Driver.Url = testURL;
