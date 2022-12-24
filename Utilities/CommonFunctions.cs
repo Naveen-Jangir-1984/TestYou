@@ -21,7 +21,6 @@ namespace TestYou.Utilities
                 PollingInterval = TimeSpan.FromSeconds(5)
             };
             FluentWait.Until(x => x.FindElement(element));
-
             driver.FindElement(element).Clear();
             driver.FindElement(element).SendKeys(value);
         }
