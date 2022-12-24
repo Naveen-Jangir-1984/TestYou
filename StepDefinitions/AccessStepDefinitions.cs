@@ -81,7 +81,7 @@ namespace TestYou.StepDefinitions
         [After]
         public void TearDown()
         {
-            this.Driver.Close();
+            this.Driver.Quit();
         }
 
     }
