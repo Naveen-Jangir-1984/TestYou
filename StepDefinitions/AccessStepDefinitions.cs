@@ -28,7 +28,7 @@ namespace TestYou.StepDefinitions
         }
 
         [Given(@"user is on '([^']*)' home page")]
-        public void GivenUserInOnHomePage(string testURL)
+        public void GivenUserIsOnHomePage(string testURL)
         {
             this.Driver.Url = testURL;
         }
