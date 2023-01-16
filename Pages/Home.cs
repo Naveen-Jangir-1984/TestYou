@@ -16,7 +16,7 @@ namespace TestYou.Pages
         private readonly By Txt_Username = By.XPath("(//input[contains(@id,'_txtUserLogin')])[2]");
         private readonly By Txt_Password = By.XPath("(//input[contains(@id,'_txtPassword')])[2]");
         private readonly By Btn_Login = By.XPath("//input[contains(@id,'_btnLogin')]");
-        private readonly By Btn_StaySignedIn = By.XPath("(//input[contains(@id,'RememberMe')])[2]");
+        private readonly By Chk_StaySignedIn = By.XPath("(//input[contains(@id,'RememberMe')])[2]");
         public Home(WebDriver driver)
         {
             this.Driver = driver;
@@ -43,7 +43,7 @@ namespace TestYou.Pages
         }
         public void CheckRememberMe()
         {
-            CommonFunctions.WaitAndClickOnButton(this.Driver, this.Chk_RememberMe);
+            CommonFunctions.WaitAndClickOnButton(this.Driver, this.Chk_StaySignedIn);
         }
     }
 }
