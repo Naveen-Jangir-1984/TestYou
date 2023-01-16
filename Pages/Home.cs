@@ -41,5 +41,9 @@ namespace TestYou.Pages
         {
             CommonFunctions.WaitAndClickOnButton(this.Driver, this.Btn_Login);
         }
+        public void CheckRememberMe()
+        {
+            CommonFunctions.WaitAndClickOnButton(this.Driver, this.Chk_RememberMe);
+        }
     }
 }
