@@ -1,7 +1,7 @@
 ﻿@login
 Feature: Login
 
-#@validaccess
+#@regression @validaccess
 #@DataSource:AccessData.xlsx @DataSet:Valid
 #Scenario: Login with valid credentials
 #	Given user is on '<testurl>' home page
@@ -12,7 +12,7 @@ Feature: Login
 #	When  user click on Signout button
 #	Then  user is navigated to home page
 
-@invalidaccess
+@regression @invalidaccess
 @DataSource:AccessData.xlsx @DataSet:Invalid
 Scenario: Login with invalid credentials
 	Given user is on '<testurl>' home page
