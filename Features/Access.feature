@@ -1,4 +1,5 @@
-﻿Feature: Login
+﻿@login
+Feature: Login
 
 #@validaccess
 #@DataSource:AccessData.xlsx @DataSet:Valid
