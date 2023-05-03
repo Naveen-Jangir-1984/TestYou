@@ -21,12 +21,14 @@ namespace TestYou.Features
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Login")]
+    [NUnit.Framework.CategoryAttribute("login")]
     public partial class LoginFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-        private static string[] featureTags = ((string[])(null));
+        private static string[] featureTags = new string[] {
+                "login"};
         
 #line 1 "Access.feature"
 #line hidden
@@ -75,6 +77,7 @@ namespace TestYou.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Login with valid credentials")]
+        [NUnit.Framework.CategoryAttribute("regression")]
         [NUnit.Framework.CategoryAttribute("validaccess")]
         [NUnit.Framework.CategoryAttribute("DataSource:AccessData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:Valid")]
@@ -82,6 +85,7 @@ namespace TestYou.Features
         public void LoginWithValidCredentials(string testurl, string username, string password, string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "regression",
                     "validaccess",
                     "DataSource:AccessData.xlsx",
                     "DataSet:Valid"};
@@ -95,7 +99,7 @@ namespace TestYou.Features
             argumentsOfScenario.Add("username", username);
             argumentsOfScenario.Add("password", password);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login with valid credentials", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 5
+#line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -105,25 +109,25 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
+#line 7
  testRunner.Given(string.Format("user is on \'{0}\' home page", testurl), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 7
+#line 8
  testRunner.When(string.Format("user enters {0} in username text field", username), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 8
+#line 9
  testRunner.And(string.Format("user enters {0} in password text field", password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 9
+#line 10
  testRunner.And("user click on Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 10
+#line 11
  testRunner.Then("username is displayed on dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 11
+#line 12
  testRunner.When("user click on Signout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 12
+#line 13
  testRunner.Then("user is navigated to home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -132,15 +136,17 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Login with invalid credentials")]
+        [NUnit.Framework.CategoryAttribute("regression")]
         [NUnit.Framework.CategoryAttribute("invalidaccess")]
-        [NUnit.Framework.CategoryAttribute("DataSource:AccessData.xlsx")]
+        [NUnit.Framework.CategoryAttribute("DataSource:TestData/Login.json")]
         [NUnit.Framework.CategoryAttribute("DataSet:Invalid")]
         [NUnit.Framework.TestCaseAttribute("https://www.testyou.in/Login.aspx", "testwithtestyou", "1234567890", null)]
         public void LoginWithInvalidCredentials(string testurl, string username, string password, string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "regression",
                     "invalidaccess",
-                    "DataSource:AccessData.xlsx",
+                    "DataSource:TestData/Login.json",
                     "DataSet:Invalid"};
             if ((exampleTags != null))
             {
@@ -152,7 +158,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("username", username);
             argumentsOfScenario.Add("password", password);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login with invalid credentials", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 16
+#line 17
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -162,19 +168,19 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 17
- testRunner.Given(string.Format("user is on \'{0}\' home page", testurl), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
 #line 18
- testRunner.When(string.Format("user enters {0} in username text field", username), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given(string.Format("user is on {0} home page", testurl), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 19
- testRunner.And(string.Format("user enters {0} in password text field", password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When(string.Format("user enters {0} in username text field", username), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 20
- testRunner.And("user click on Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("user enters {0} in password text field", password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 21
+ testRunner.And("user click on Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 22
  testRunner.Then("login error is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
