@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="b3b8f3b8-9b1a-4ac5-9f8c-5c7a7a317e8d" name="SampleTests" runUser="Administrator" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2024-06-23T12:34:56.7898126+00:00" queuing="2024-06-23T12:34:57.1234567+00:00" start="2024-06-23T12:34:57.2345678+00:00" finish="2024-06-23T12:35:01.3456789+00:00" />
+  <TestSettings name="Default Test Settings" id="b988fdb3-58c6-4e90-bb70-76ad3f33a1a8" />
+  <Results>
+    <UnitTestResult executionId="6a35522b-c8d7-4b87-bf04-99ee1e61e2a8" testId="5c22a1e5-4e8c-462b-bb24-6f022accd6ef" testName="TestMethod1" outcome="Passed">
+      <Output>
+        <StdOut>Test method passed successfully.</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="f3fb8b12-785d-4b5e-a6ea-0d11f0c3f7b4" testId="94247b1e-9e25-4e7b-9d2b-4a0b46f85f7d" testName="TestMethod2" outcome="Failed">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.AreEqual failed. Expected: 2, Actual: 3</Message>
+          <StackTrace>at SampleTests.UnitTest1.TestMethod2() in C:\Path\To\UnitTest1.cs:line 22</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>
