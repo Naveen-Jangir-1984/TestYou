@@ -38,6 +38,10 @@ steps:
     otherConsoleOptions: '--logger trx --results-directory $(System.DefaultWorkingDirectory)/TestResults'
     diagnosticsEnabled: true
 
+- script: |
+    dir $(System.DefaultWorkingDirectory)/TestResults
+  displayName: 'List files in TestResults'
+
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'VSTest'
