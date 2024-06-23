@@ -35,9 +35,8 @@ steps:
     searchFolder: '$(System.DefaultWorkingDirectory)'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-    runSettingsFile: '$(System.DefaultWorkingDirectory)/TestResults/trx' # This line tells VSTest to output .trx files
-    otherConsoleOptions: '--logger trx'
-    diagnosticsEnabled: true # Optional, but useful for detailed logs
+    otherConsoleOptions: '--logger trx;LogFileName=$(System.DefaultWorkingDirectory)/TestResults/test_results.trx'
+    diagnosticsEnabled: true
 
 - task: PublishTestResults@2
   inputs:
@@ -45,4 +44,5 @@ steps:
     testResultsFiles: '$(System.DefaultWorkingDirectory)/TestResults/**/*.trx'
     failTaskOnFailedTests: true
     testRunTitle: 'Unit Tests'
+
 
