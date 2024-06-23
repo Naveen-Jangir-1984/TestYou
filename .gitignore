@@ -42,6 +42,7 @@ bld/
 Generated\ Files/
 
 # MSTest test Results
+
 [Bb]uild[Ll]og.*
 
 # NUnit

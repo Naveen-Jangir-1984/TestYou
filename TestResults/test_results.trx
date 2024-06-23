@@ -1,0 +1,35 @@
+<TestRun id="5ebf1e45-9e4b-4a27-bb02-2b5ff3e59457" name="Your Test Run" runUser="domain\user">
+    <Times creation="2024-06-03T16:51:44.000Z" queuing="2024-06-03T16:51:44.000Z" start="2024-06-03T16:51:44.000Z" finish="2024-06-03T16:53:10.000Z" />
+    <TestSettings name="TestSettings1" id="8b724d0b-4f72-4902-9650-2a25c4f0f8bc">
+        <Execution>
+            <AgentRule name="Execution Agents">
+                <DataCollectors>
+                    <DataCollector friendlyName="Test Impact">
+                        <Configuration>
+                            <EnableTestImpact>true</EnableTestImpact>
+                        </Configuration>
+                    </DataCollector>
+                </DataCollectors>
+            </AgentRule>
+        </Execution>
+    </TestSettings>
+    <Results>
+        <UnitTestResult executionId="a6d4f4d0-bbaf-4502-9128-6e7c5021fb0e" testId="2d9e79b2-4128-41f8-aecb-ea3c5d502bc5" testName="SampleTest" computerName="your-computer-name" duration="00:00:01.1234567" startTime="2024-06-03T16:51:44.000Z" endTime="2024-06-03T16:53:10.000Z" outcome="Passed" />
+    </Results>
+    <TestDefinitions>
+        <UnitTest name="SampleTest" storage="SampleTest.dll" id="2d9e79b2-4128-41f8-aecb-ea3c5d502bc5">
+            <Execution id="a6d4f4d0-bbaf-4502-9128-6e7c5021fb0e" />
+            <TestMethod codeBase="SampleTest.dll" adapterTypeName="executor://nunitadapter/v2" className="SampleTestNamespace.SampleTestClass" name="SampleTest" />
+        </UnitTest>
+    </TestDefinitions>
+    <TestEntries>
+        <TestEntry testId="2d9e79b2-4128-41f8-aecb-ea3c5d502bc5" executionId="a6d4f4d0-bbaf-4502-9128-6e7c5021fb0e" testListId="3e8a7559-42ed-4c60-8d6d-5872a1e35a60" />
+    </TestEntries>
+    <TestLists>
+        <TestList id="3e8a7559-42ed-4c60-8d6d-5872a1e35a60" name="Results Not in a List" />
+        <TestList id="19431567-8539-422a-85d7-44ee4e166bda" name="All Loaded Results" />
+    </TestLists>
+    <ResultSummary outcome="Completed">
+        <Counters total="1" executed="1" passed="1" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="1" inProgress="0" pending="0" />
+    </ResultSummary>
+</TestRun>
