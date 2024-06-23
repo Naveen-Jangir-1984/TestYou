@@ -35,14 +35,12 @@ steps:
     searchFolder: '$(System.DefaultWorkingDirectory)'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-    otherConsoleOptions: '--logger trx;LogFileName=$(System.DefaultWorkingDirectory)/TestResults/test_results.trx'
+    otherConsoleOptions: '--logger trx --results-directory $(System.DefaultWorkingDirectory)/TestResults'
     diagnosticsEnabled: true
 
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'VSTest'
-    testResultsFiles: '$(System.DefaultWorkingDirectory)/TestResults/**/*.trx'
+    testResultsFiles: '$(System.DefaultWorkingDirectory)/TestResults/*.trx'
     failTaskOnFailedTests: true
     testRunTitle: 'Unit Tests'
-
-
